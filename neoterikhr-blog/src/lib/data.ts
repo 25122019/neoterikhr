@@ -136,8 +136,8 @@ export const reviews: Review[] = [
   cons: [
     { en: 'Requires technical knowledge', vi: 'Đòi hỏi kiến thức kỹ thuật', de: 'Erfordert technisches Wissen' },
     { en: 'Cloud vs Self-hosted distinction', vi: 'Phân biệt giữa bản Cloud và Self-hosted', de: 'Unterscheidung zwischen Cloud und Self-Hosted' }
-  ]
-};
+  ],
+},
   }
 ];
 
