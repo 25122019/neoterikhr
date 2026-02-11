@@ -1,16 +1,30 @@
 import { prisma } from "./prisma";
 
+export type Locale = 'en' | 'vi' | 'de';
+export type LocalizedString = Record<Locale, string>;
+
 export interface Review {
   id: string;
-  title: string;
+  title: string | LocalizedString;
   slug: string;
-  description: string;
-  content: string;
+  description: string | LocalizedString;
+  content: string | LocalizedString;
+
   rating: number;
   category: string;
   image: string;
+
   author?: string;
   createdAt?: string;
+
+  type?: 'project' | 'product';
+  affiliateUrl?: string;
+  commission?: string;
+  cookieTime?: string;
+  paymentMethods?: string[];
+  pros?: (string | LocalizedString)[];
+  cons?: (string | LocalizedString)[];
+}
 }
 
 export const reviews: Review[] = [
@@ -70,7 +84,7 @@ export const reviews: Review[] = [
   },
   {
     id: '6',
-  slug: 'n8nn-affiliate-review',
+  slug: 'n8n-affiliate-review',
   type: 'project',
   category: 'AI',
   rating: 4.9,
