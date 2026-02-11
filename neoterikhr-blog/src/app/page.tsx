@@ -12,20 +12,32 @@ import Image from "next/image";
 import { Review, reviews as mockReviews } from "@/lib/data";
 
 export default function Home() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [reviews, setReviews] = useState<Review[]>(mockReviews);
+  const lang = (i18n.language?.slice(0, 2) as "en" | "vi" | "de") || "en";
+
+const pick = (val: string | Record<"en" | "vi" | "de", string>) =>
+  typeof val === "string" ? val : (val[lang] ?? val.en);
+
+const norm = (val: string | Record<"en" | "vi" | "de", string>) =>
+  pick(val).toLowerCase();
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
   const categories = ["All", ...Array.from(new Set(mockReviews.map(r => r.category)))];
 
-  const filteredReviews = reviews.filter(r => {
-    const matchesSearch = r.title.toLowerCase().includes(search.toLowerCase()) || 
-                         r.description.toLowerCase().includes(search.toLowerCase());
-    const matchesCategory = selectedCategory === "All" || r.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+const filteredReviews = reviews.filter((r) => {
+  const q = search.toLowerCase();
+
+  const matchesSearch =
+    norm(r.title).includes(q) || norm(r.description).includes(q);
+
+  const matchesCategory =
+    selectedCategory === "All" || r.category === selectedCategory;
+
+  return matchesSearch && matchesCategory;
+});
 
   return (
     <main className="min-h-screen relative bg-[#fafafa]" data-design-id="home-page">
