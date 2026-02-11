@@ -160,12 +160,12 @@ const filteredReviews = reviews.filter((r) => {
                   <Link href={`/reviews/${review.slug}`} className="group block h-full" data-design-id={`link-grid-${review.id}`}>
                     <div className="bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 h-full flex flex-col" data-design-id={`card-grid-${review.id}`}>
                       <div className="relative h-64 overflow-hidden" data-design-id={`img-grid-wrapper-${review.id}`}>
-                        <img 
-                          src={review.image} 
-                          alt={review.title} 
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                          data-design-id={`img-grid-${review.id}`}
-                        />
+                     <img 
+                        src={review.image} 
+                        alt={pick(review.title)} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        data-design-id={`img-grid-${review.id}`}
+/>
                         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-primary" data-design-id={`badge-grid-${review.id}`}>
                           {review.category}
                         </div>
@@ -176,10 +176,10 @@ const filteredReviews = reviews.filter((r) => {
                       </div>
                       <div className="p-8 flex flex-col flex-grow" data-design-id={`info-grid-${review.id}`}>
                         <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-primary transition-colors line-clamp-2" data-design-id={`title-grid-${review.id}`}>
-                          {review.title}
+                          {pick(review.title)}
                         </h3>
                         <p className="text-slate-500 text-sm line-clamp-3 mb-6 flex-grow" data-design-id={`desc-grid-${review.id}`}>
-                          {review.description}
+                          {pick(review.description)}
                         </p>
                         <div className="flex items-center justify-between pt-4 border-t border-slate-50" data-design-id={`footer-grid-${review.id}`}>
                           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest" data-design-id={`read-grid-${review.id}`}>{t('read_more')}</span>
@@ -194,7 +194,7 @@ const filteredReviews = reviews.filter((r) => {
                   <Link href={`/reviews/${review.slug}`} className="group block" data-design-id={`link-list-${review.id}`}>
                     <div className="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col md:flex-row gap-8 items-center" data-design-id={`card-list-${review.id}`}>
                       <div className="w-full md:w-48 h-32 shrink-0 rounded-2xl overflow-hidden" data-design-id={`img-list-wrapper-${review.id}`}>
-                        <img src={review.image} alt={review.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-design-id={`img-list-${review.id}`} />
+                        <img src={review.image} alt={pick(review.title)} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-design-id={`img-list-${review.id}`} />
                       </div>
                       <div className="flex-grow" data-design-id={`info-list-${review.id}`}>
                         <div className="flex items-center gap-3 mb-2" data-design-id={`meta-list-${review.id}`}>
@@ -204,8 +204,8 @@ const filteredReviews = reviews.filter((r) => {
                             {review.rating}
                           </div>
                         </div>
-                        <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors mb-2" data-design-id={`title-list-${review.id}`}>{review.title}</h3>
-                        <p className="text-slate-500 text-sm line-clamp-2" data-design-id={`desc-list-${review.id}`}>{review.description}</p>
+                        <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors mb-2" data-design-id={`title-list-${review.id}`}>{pick(review.title)}</h3>
+                        <p className="text-slate-500 text-sm line-clamp-2" data-design-id={`desc-list-${review.id}`}>{pick(review.description)}</p>
                       </div>
                       <div className="shrink-0" data-design-id={`action-list-${review.id}`}>
                         <Button variant="ghost" className="rounded-full group-hover:bg-primary group-hover:text-white" data-design-id={`btn-list-${review.id}`}>
