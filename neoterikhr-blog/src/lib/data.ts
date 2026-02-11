@@ -25,7 +25,6 @@ export interface Review {
   pros?: (string | LocalizedString)[];
   cons?: (string | LocalizedString)[];
 }
-}
 
 export const reviews: Review[] = [
   {
