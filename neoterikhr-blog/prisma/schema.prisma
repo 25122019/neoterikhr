@@ -17,14 +17,28 @@ model User {
 }
 
 model Review {
-  id          String   @id @default(cuid())
-  title       String
-  slug        String   @unique
-  content     String
-  category    String
-  rating      Float
-  image       String?
-  author      String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id             String   @id @default(cuid())
+  slug           String   @unique
+
+  // i18n JSON
+  title          Json
+  description    Json?
+  content        Json
+
+  category       String
+  rating         Float
+  image          String?
+
+  // affiliate / project fields
+  type           String?        // "project" | "product"
+  affiliateUrl   String?
+  commission     String?
+  cookieTime     String?
+  paymentMethods Json?
+  pros           Json?
+  cons           Json?
+
+  author         String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 }
