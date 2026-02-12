@@ -28,7 +28,7 @@ export interface Review {
 
 export const reviews: Review[] = [
   {
-    id: '1',
+    id: '6',
     title: 'Wealthy Affiliate Review 2026: Is It Still Worth It?',
     slug: 'wealthy-affiliate-review-2026',
     description: 'A comprehensive look at Wealthy Affiliate platform and its potential for beginners in 2026.',
@@ -82,7 +82,7 @@ export const reviews: Review[] = [
     image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=800',
   },
   {
-    id: '6',
+    id: '1',
   slug: 'n8n-affiliate-review',
   type: 'project',
   category: 'AI',
@@ -105,35 +105,53 @@ export const reviews: Review[] = [
   },
   content: {
     en: `
-      <h2>Overview</h2>
-<p class="lead">
-  n8n is an extendable workflow automation tool that connects apps, APIs, and AI into powerful automations.
-</p>
+       <h2>Overview</h2>
+    <p class="lead">
+      n8n is an extendable workflow automation tool that connects apps, APIs, and AI into powerful automations.
+    </p>
 
-<div class="callout">
-  <strong>TL;DR:</strong> Great for AI agents and automation workflows. Strong affiliate terms (30% recurring for 12 months).
-</div>
+    <div class="callout">
+      <strong>TL;DR:</strong> Great for AI agents & automation workflows. Strong affiliate terms (30% recurring for 12 months).
+    </div>
 
-<hr />
+    <div class="facts">
+      <div class="row"><div class="k">Commission</div><div class="v">30% recurring (12 months)</div></div>
+      <div class="row"><div class="k">Cookie</div><div class="v">30 days</div></div>
+      <div class="row"><div class="k">Payout</div><div class="v">PayPal • Stripe • Wire Transfer</div></div>
+    </div>
 
-<h2>What is n8n?</h2>
-<p>
-  n8n is built for technical builders who want flexible workflows, self-host options, and deep integrations.
-</p>
+    <hr />
 
-<h2>The Affiliate Opportunity</h2>
-<ul>
-  <li><strong>Commission:</strong> 30% recurring for 12 months</li>
-  <li><strong>Cookie:</strong> 30 days</li>
-  <li><strong>Payout methods:</strong> PayPal, Stripe, Wire Transfer</li>
-</ul>
+    <h2>What is n8n?</h2>
+    <p>
+      Built for technical builders who want flexible workflows, self-host options, and deep integrations.
+    </p>
 
-<h2>Why Promote n8n?</h2>
-<ul>
-  <li><strong>High intent audience:</strong> builders & automation teams convert well.</li>
-  <li><strong>Clear positioning:</strong> “AI workflows & automation” is a strong category.</li>
-  <li><strong>Sticky product:</strong> recurring revenue aligns with recurring commissions.</li>
-</ul>
+    <div class="grid">
+      <div class="card">
+        <h3>Best for</h3>
+        <ul>
+          <li>Automation consultants</li>
+          <li>AI agent builders</li>
+          <li>Tech creators / reviewers</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Not ideal for</h3>
+        <ul>
+          <li>Non-technical users who want “no-code only”</li>
+          <li>Teams without API / integration needs</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Why promote n8n?</h2>
+    <ul>
+      <li><strong>High-intent audience:</strong> builders & automation teams convert well.</li>
+      <li><strong>Clear positioning:</strong> AI workflows & automation is a strong category.</li>
+      <li><strong>Sticky product:</strong> recurring revenue aligns with recurring commissions.</li>
+    </ul>
 
     `,
     vi: `
