@@ -105,16 +105,36 @@ export const reviews: Review[] = [
   },
   content: {
     en: `
-      <h2>What is n8n?</h2>
-      <p>n8n is an extendable workflow automation tool that lets you connect anything to everything via its open, fair-code model. It is particularly powerful for building AI agents and complex data pipelines.</p>
-      <h2>The Affiliate Opportunity</h2>
-      <p>The n8n affiliate program offers a generous 30% commission for every n8n cloud referral you bring for the first 12 months. This is perfect for tech reviewers, automation consultants, and content creators.</p>
-      <h2>Why Promote n8n?</h2>
-      <ul>
-        <li>Leader in AI workflow automation.</li>
-        <li>High conversion rates for tech-savvy audiences.</li>
-        <li>Excellent documentation and community support.</li>
-      </ul>
+      <h2>Overview</h2>
+<p class="lead">
+  n8n is an extendable workflow automation tool that connects apps, APIs, and AI into powerful automations.
+</p>
+
+<div class="callout">
+  <strong>TL;DR:</strong> Great for AI agents and automation workflows. Strong affiliate terms (30% recurring for 12 months).
+</div>
+
+<hr />
+
+<h2>What is n8n?</h2>
+<p>
+  n8n is built for technical builders who want flexible workflows, self-host options, and deep integrations.
+</p>
+
+<h2>The Affiliate Opportunity</h2>
+<ul>
+  <li><strong>Commission:</strong> 30% recurring for 12 months</li>
+  <li><strong>Cookie:</strong> 30 days</li>
+  <li><strong>Payout methods:</strong> PayPal, Stripe, Wire Transfer</li>
+</ul>
+
+<h2>Why Promote n8n?</h2>
+<ul>
+  <li><strong>High intent audience:</strong> builders & automation teams convert well.</li>
+  <li><strong>Clear positioning:</strong> “AI workflows & automation” is a strong category.</li>
+  <li><strong>Sticky product:</strong> recurring revenue aligns with recurring commissions.</li>
+</ul>
+
     `,
     vi: `
       <h2>n8n là gì?</h2>
