@@ -23,20 +23,20 @@ import { Button } from "@/components/ui/button";
 
 type Lang = "en" | "vi" | "de";
 type LocalizedString = Record<Lang, string>;
+type MaybeLocalized = string | LocalizedString;
+type MaybeLocalizedArray = Array<string | LocalizedString>;
 
-function pickLang(val: string | LocalizedString | undefined, lang: Lang): string {
+function pickLang(val: MaybeLocalized | undefined, lang: Lang): string {
   if (!val) return "";
   if (typeof val === "string") return val;
   return val[lang] ?? val.en ?? Object.values(val)[0] ?? "";
 }
 
-function pickLangArray(
-  val: (string | LocalizedString)[] | undefined,
-  lang: Lang
-): string[] {
+function pickLangArray(val: MaybeLocalizedArray | undefined, lang: Lang): string[] {
   if (!val) return [];
-  return val.map((x) => (typeof x === "string" ? x : x[lang] ?? x.en ?? Object.values(x)[0] ?? ""));
+  return val.map((x) => (typeof x === "string" ? x : (x[lang] ?? x.en ?? Object.values(x)[0] ?? "")));
 }
+
 
 export default function ReviewDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -57,12 +57,12 @@ export default function ReviewDetail() {
   const view = useMemo(() => {
     if (!review) return null;
 
-    const title = pickLang(review.title as any, lang);
-    const description = pickLang(review.description as any, lang);
-    const content = pickLang(review.content as any, lang);
+    const title = pickLang(review.title, lang);
+    const description = pickLang(review.description, lang);
+    const content = pickLang(review.content, lang);
+    const pros = pickLangArray(review.pros, lang);
+    const cons = pickLangArray(review.cons, lang);
 
-    const pros = pickLangArray(review.pros as any, lang);
-    const cons = pickLangArray(review.cons as any, lang);
 
     return { title, description, content, pros, cons };
   }, [review, lang]);
